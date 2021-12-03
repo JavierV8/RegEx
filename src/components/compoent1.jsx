@@ -7,13 +7,13 @@ function App() {
 
 
   useEffect(() => {
-      setResult1(text1.replace(/[^a-zA-Z]+/g, " ").split(" ").filter(word => word.match(/on\b/g)));
+      setResult1(text1.replace(/[^a-zA-Z]+/g, " ").split(" ").filter(word => word.match(/on\b|ed\b/g)).map(e => e+", "));
   }, []);
   return (
     <div className="App">
       <div className="box">
-        <p>match all words that ends with "on"</p>
-        <p>text1.replace(/[^a-zA-Z]+/g, " ").split(" ").filter(word => word.match(/on\b/g))</p>
+        <p>match all words that ends with "on" or "ed"</p>
+        <p>{`text1.replace(/[^a-zA-Z]+/g, " ").split(" ").filter(word => word.match(/on\b|ed\b/g)).map(e => e+", ")`}</p>
         <h3>Text</h3>
         <p>{text1}</p>
 
