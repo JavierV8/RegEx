@@ -14,7 +14,7 @@ function App() {
     // with another word boundary
     setResult1(text.match(/\b(?!(war|code)\b)\w+\b/gi).map(e => e+", "));
   }, []);
-console.log(result1)
+
   return (
     <div className="App">
       <div className="box">
